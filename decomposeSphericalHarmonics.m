@@ -1,7 +1,5 @@
-function [c,l,m] = decomposeSphericalHarmonics(im,channel,maxHarmOrders)
-if ~exist('channel','var')
-    channel = 2;
-end
+function [c,l,m] = decomposeSphericalHarmonics(im,maxHarmOrders)
+
 if ~exist('harmOrders','var')
     maxHarmOrders = 2;
 end
@@ -29,7 +27,7 @@ for thisL = 0:maxHarmOrders
         %for each degree and order, get basis functions and then calculate
         %inner product between basis function and image.
         Ylm = getSphericalHarmonic(thisL,thisM,theta,phi);
-        c(thisL^2+thisM+thisL+1) = calculateSphericalInnerProduct(imageMap,Ylm,theta,phi);
+        c(thisL^2+thisM+thisL+1) = calculateSphericalInnerProduct(im,Ylm,theta,phi);
     end
 end
 

@@ -1,5 +1,5 @@
 % which harmonic degrees to calculate
-maxHarmOrder = 2;
+maxHarmOrders = 2;
 
 %Load image. 'im' should ultimately be a a m*n*1 image - whether this is a
 %luminance image, rgb2gray, or by selecting one channel.
